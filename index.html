@@ -10,6 +10,12 @@ body{
   font-family:Arial;
   background:#0b1220;
   color:white;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
 .nav{
@@ -17,6 +23,7 @@ body{
   justify-content:space-between;
   padding:18px 40px;
   background:#111a2e;
+  align-items:center;
 }
 
 .logo{
@@ -25,12 +32,23 @@ body{
   color:#38bdf8;
   letter-spacing:3px;
   text-shadow:0 0 10px #38bdf8;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {text-shadow:0 0 5px #38bdf8;}
+  to {text-shadow:0 0 20px #38bdf8;}
 }
 
 .nav a{
   color:white;
   text-decoration:none;
   margin-left:20px;
+  transition:0.3s;
+}
+
+.nav a:hover{
+  color:#38bdf8;
 }
 
 .hero{
@@ -46,7 +64,7 @@ body{
   color:#cbd5e1;
 }
 
-.btn{
+button{
   margin-top:25px;
   padding:14px 28px;
   border:none;
@@ -55,6 +73,12 @@ body{
   color:black;
   font-weight:bold;
   cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px #38bdf8;
 }
 </style>
 
@@ -73,10 +97,10 @@ body{
 </div>
 
 <div class="hero">
-  <h1>Welcome to MARO Store</h1>
-  <p>Premium fashion experience</p>
+  <h1>Welcome to MARO STORE</h1>
+  <p>Premium Fashion Brand</p>
 
-  <button class="btn" onclick="location.href='cv.html'">
+  <button onclick="location.href='cv.html'">
     Get Started
   </button>
 </div>
