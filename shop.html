@@ -5,176 +5,100 @@
 <title>MARO STORE</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0a0f1c;
-  color:white;
-}
+body{margin:0;font-family:Arial;background:#0a0f1c;color:white;}
 
-/* NAV */
 .nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 50px;
-  background:#0f172a;
-  align-items:center;
+display:flex;justify-content:space-between;
+padding:20px 50px;background:#0f172a;
 }
 
-.logo{
-  font-size:24px;
-  font-weight:bold;
-  color:#38bdf8;
-}
+.logo{color:#38bdf8;font-size:24px;font-weight:bold;}
 
-.cart{
-  background:#111827;
-  padding:8px 15px;
-  border-radius:10px;
-  font-size:14px;
-}
+.cartBox{background:#111827;padding:8px 15px;border-radius:10px;}
 
-/* TITLE */
-.title{
-  text-align:center;
-  margin-top:40px;
-}
+.title{text-align:center;margin-top:40px;}
 
-/* PRODUCTS */
 .products{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-  margin-top:40px;
-  padding:20px;
+display:flex;justify-content:center;flex-wrap:wrap;
+gap:20px;margin-top:40px;
 }
 
 .card{
-  background:#111827;
-  width:220px;
-  padding:25px;
-  border-radius:18px;
-  text-align:center;
-  transition:0.3s;
-  border:1px solid rgba(56,189,248,0.2);
+background:#111827;width:220px;
+padding:20px;border-radius:15px;
+text-align:center;
 }
 
-.card:hover{
-  transform:scale(1.05);
-  border-color:#38bdf8;
-  box-shadow:0 0 15px rgba(56,189,248,0.4);
-}
-
-.type{
-  color:#94a3b8;
-  font-size:13px;
-  letter-spacing:2px;
-}
-
-.name{
-  font-size:18px;
-  margin-top:10px;
-  font-weight:bold;
-}
-
-.price{
-  color:#38bdf8;
-  margin:15px 0;
-  font-weight:bold;
-}
+.price{color:#38bdf8;font-weight:bold;}
 
 button{
-  padding:10px 15px;
-  border:none;
-  border-radius:10px;
-  background:#22c55e;
-  color:white;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-button:hover{
-  transform:scale(1.05);
-}
-
-/* POPUP */
-.popup{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#22c55e;
-  padding:12px 18px;
-  border-radius:10px;
-  display:none;
+margin-top:10px;padding:10px;
+background:#22c55e;color:white;
+border:none;border-radius:8px;
+cursor:pointer;
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="nav">
-  <div class="logo">MARO</div>
-  <div class="cart">Cart: <span id="cartCount">0</span> | <span id="total">0</span> EGP</div>
+<div class="logo">MARO</div>
+
+<div class="cartBox">
+Cart: <span id="count">0</span> | <span id="total">0</span> EGP
+</div>
 </div>
 
 <div class="title">
-  <h1>STORE MARO</h1>
-  <p>Minimal Luxury Streetwear</p>
+<h1>MARO STORE</h1>
 </div>
 
 <div class="products">
 
-  <div class="card">
-    <div class="type">HOODIE</div>
-    <div class="name">Classic Fit</div>
-    <div class="price">450 EGP</div>
-    <button onclick="addToCart(450)">Buy</button>
-  </div>
+<div class="card">
+<h3>HOODIE</h3>
+<p class="price">450 EGP</p>
+<button onclick="add('HOODIE',450)">Add</button>
+</div>
 
-  <div class="card">
-    <div class="type">T-SHIRT</div>
-    <div class="name">Everyday Wear</div>
-    <div class="price">250 EGP</div>
-    <button onclick="addToCart(250)">Buy</button>
-  </div>
+<div class="card">
+<h3>T-SHIRT</h3>
+<p class="price">250 EGP</p>
+<button onclick="add('T-SHIRT',250)">Add</button>
+</div>
 
-  <div class="card">
-    <div class="type">SWEATPANTS</div>
-    <div class="name">Relax Fit</div>
-    <div class="price">400 EGP</div>
-    <button onclick="addToCart(400)">Buy</button>
-  </div>
+<div class="card">
+<h3>SWEATPANTS</h3>
+<p class="price">400 EGP</p>
+<button onclick="add('SWEATPANTS',400)">Add</button>
+</div>
 
-  <div class="card">
-    <div class="type">JEANS</div>
-    <div class="name">Slim Style</div>
-    <div class="price">600 EGP</div>
-    <button onclick="addToCart(600)">Buy</button>
-  </div>
+<div class="card">
+<h3>JEANS</h3>
+<p class="price">600 EGP</p>
+<button onclick="add('JEANS',600)">Add</button>
+</div>
 
 </div>
 
-<div class="popup" id="popup">Added to cart ✔</div>
-
 <script>
-let count = 0;
-let total = 0;
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = cart.reduce((a,b)=>a+b.price,0);
 
-function addToCart(price){
-  count++;
-  total += price;
+update();
 
-  document.getElementById("cartCount").innerText = count;
-  document.getElementById("total").innerText = total;
+function add(name,price){
+cart.push({name,price});
+localStorage.setItem("cart",JSON.stringify(cart));
 
-  let popup = document.getElementById("popup");
-  popup.style.display = "block";
+total += price;
+update();
+}
 
-  setTimeout(()=>{
-    popup.style.display = "none";
-  },1200);
+function update(){
+document.getElementById("count").innerText = cart.length;
+document.getElementById("total").innerText = total;
 }
 </script>
 
