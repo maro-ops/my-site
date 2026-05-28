@@ -2,42 +2,41 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MARO STORE</title>
+<title>MARO | Luxury Brand</title>
 
 <style>
 body{
   margin:0;
   font-family:Arial;
-  background:#0b1220;
+  background:#0a0f1c;
   color:white;
-  animation:fadeIn 0.6s ease;
+  animation:fade 0.6s ease;
 }
 
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(10px);}
-  to{opacity:1; transform:translateY(0);}
+@keyframes fade{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
 }
 
 /* NAV */
 .nav{
   display:flex;
   justify-content:space-between;
-  padding:18px 40px;
-  background:#111a2e;
-  align-items:center;
+  padding:20px 50px;
+  background:#0f172a;
 }
 
 .logo{
-  font-size:24px;
+  font-size:26px;
   font-weight:bold;
   color:#38bdf8;
-  text-shadow:0 0 10px #38bdf8;
+  letter-spacing:5px;
 }
 
 .nav a{
   color:white;
   text-decoration:none;
-  margin-left:20px;
+  margin-left:25px;
 }
 
 .nav a:hover{
@@ -47,32 +46,21 @@ body{
 /* HERO */
 .hero{
   text-align:center;
-  margin-top:80px;
+  margin-top:100px;
 }
 
 .hero h1{
-  font-size:50px;
+  font-size:48px;
 }
 
 .hero p{
   color:#cbd5e1;
-  font-size:18px;
   margin-top:10px;
 }
 
-/* strong sentence */
-.big-text{
-  text-align:center;
-  font-size:28px;
-  margin-top:25px;
-  color:#38bdf8;
-  font-weight:bold;
-}
-
-/* button */
 .btn{
   margin-top:25px;
-  padding:14px 28px;
+  padding:14px 30px;
   border:none;
   border-radius:12px;
   background:#38bdf8;
@@ -84,26 +72,25 @@ body{
 
 .btn:hover{
   transform:scale(1.05);
-  box-shadow:0 0 15px #38bdf8;
+  box-shadow:0 0 20px #38bdf8;
 }
 
-/* features */
+/* FEATURES */
 .features{
   display:flex;
   justify-content:center;
   gap:20px;
   margin-top:70px;
   flex-wrap:wrap;
-  padding:20px;
 }
 
 .card{
-  background:#111a2e;
-  padding:20px;
+  background:#111827;
+  padding:25px;
   width:220px;
-  border-radius:15px;
-  transition:0.3s;
+  border-radius:16px;
   text-align:center;
+  transition:0.3s;
 }
 
 .card:hover{
@@ -126,37 +113,30 @@ body{
   </div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
-  <h1>Welcome to MARO Store</h1>
-  <p>Official Website & Fashion Brand</p>
+  <h1>MARO Luxury Fashion</h1>
+  <p>Minimal design. Maximum identity.</p>
 
   <button class="btn" onclick="location.href='shop.html'">
-    Shop Now
+    Explore Collection
   </button>
 </div>
 
-<!-- BIG LINE -->
-<div class="big-text">
-  “Style is not what you wear, it’s what you express.”
-</div>
-
-<!-- FEATURES -->
 <div class="features">
 
   <div class="card">
-    <h3>Quality</h3>
-    <p>Premium materials</p>
+    <h3>Premium</h3>
+    <p>High quality fabrics</p>
   </div>
 
   <div class="card">
-    <h3>Fast</h3>
-    <p>Quick service</p>
+    <h3>Modern</h3>
+    <p>Clean streetwear style</p>
   </div>
 
   <div class="card">
-    <h3>Best Price</h3>
-    <p>Affordable fashion</p>
+    <h3>Affordable</h3>
+    <p>Best prices in EGP</p>
   </div>
 
 </div>
