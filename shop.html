@@ -10,6 +10,12 @@ body{
   font-family:Arial;
   background:#0b1220;
   color:white;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
 }
 
 .nav{
@@ -48,6 +54,12 @@ body{
   padding:20px;
   border-radius:15px;
   width:200px;
+  transition:0.3s;
+}
+
+.product:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 15px #38bdf8;
 }
 
 button{
@@ -58,6 +70,11 @@ button{
   background:#22c55e;
   color:white;
   cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
 }
 </style>
 
@@ -77,7 +94,7 @@ button{
 
 <div class="container">
 
-  <h1>STORE MAROO</h1>
+  <h1>STORE MARO</h1>
 
   <div class="products">
 
