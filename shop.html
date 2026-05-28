@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>متجر MARO</title>
+<title>MARO - Shop</title>
 
 <style>
 body {
@@ -15,8 +15,14 @@ body {
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 15px 25px;
+  padding: 15px 30px;
   background: #1e293b;
+}
+
+.logo {
+  color: #38bdf8;
+  font-weight: bold;
+  font-size: 22px;
 }
 
 .nav a {
@@ -25,24 +31,22 @@ body {
   margin-left: 15px;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #38bdf8;
-  text-shadow: 0 0 10px #38bdf8;
-}
-
 .container {
   text-align: center;
   margin-top: 50px;
 }
 
+.products {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .product {
   background: #1e293b;
   padding: 20px;
-  margin: 15px;
   border-radius: 15px;
-  display: inline-block;
   width: 200px;
 }
 
@@ -72,18 +76,22 @@ button {
 
 <div class="container">
 
-  <h1>👕 متجر MARO</h1>
+  <h1>🛒 متجر MARO</h1>
 
-  <div class="product">
-    <h3>T-Shirt</h3>
-    <p>100 جنيه</p>
-    <button>شراء</button>
-  </div>
+  <div class="products">
 
-  <div class="product">
-    <h3>Hoodie</h3>
-    <p>250 جنيه</p>
-    <button>شراء</button>
+    <div class="product">
+      <h3>تيشيرت</h3>
+      <p>100 جنيه</p>
+      <button>شراء</button>
+    </div>
+
+    <div class="product">
+      <h3>هودي</h3>
+      <p>250 جنيه</p>
+      <button>شراء</button>
+    </div>
+
   </div>
 
 </div>
