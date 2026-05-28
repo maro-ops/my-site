@@ -1,55 +1,95 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>الرئيسية</title>
+<meta charset="UTF-8">
+<title>MARO - Home</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      width: 300px;
-    }
+/* Navbar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: #1e293b;
+  align-items: center;
+}
 
-    button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 10px;
-      background: #3b82f6;
-      color: white;
-      cursor: pointer;
-    }
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #38bdf8;
+  letter-spacing: 2px;
+}
 
-    button:hover {
-      background: #2563eb;
-    }
-  </style>
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.nav a:hover {
+  color: #38bdf8;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero p {
+  color: #cbd5e1;
+  margin-top: 10px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #2563eb;
+}
+</style>
+
 </head>
 
 <body>
 
-  <div class="card">
-    <h1>👋 مرحبًا</h1>
-    <p>ده موقعي الشخصي</p>
+<div class="nav">
+  <div class="logo">MARO</div>
 
-    <button onclick="window.location.href='cv.html'">
-      السيرة الذاتية
-    </button>
+  <div>
+    <a href="index.html">الرئيسية</a>
+    <a href="cv.html">السيرة الذاتية</a>
+    <a href="shop.html">المتجر</a>
   </div>
+</div>
+
+<div class="hero">
+  <h1>👋 مرحبًا بك في MARO</h1>
+  <p>موقع احترافي بسيط لكن قوي 💻</p>
+
+  <button class="btn" onclick="alert('أهلاً بيك 🔥')">
+    ابدأ الآن
+  </button>
+</div>
 
 </body>
 </html>
