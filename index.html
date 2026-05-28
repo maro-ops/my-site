@@ -10,6 +10,12 @@ body {
   font-family: Arial;
   background: #0f172a;
   color: white;
+  transition: opacity 0.5s ease;
+}
+
+/* لما نعمل fade */
+.fade-out {
+  opacity: 0;
 }
 
 /* Navbar */
@@ -26,6 +32,7 @@ body {
   font-weight: bold;
   color: #38bdf8;
   letter-spacing: 2px;
+  text-shadow: 0 0 10px #38bdf8;
 }
 
 .nav a {
@@ -38,7 +45,7 @@ body {
   color: #38bdf8;
 }
 
-/* Hero */
+/* المحتوى */
 .hero {
   text-align: center;
   margin-top: 120px;
@@ -50,7 +57,6 @@ body {
 
 .hero p {
   color: #cbd5e1;
-  margin-top: 10px;
 }
 
 .btn {
@@ -61,6 +67,7 @@ body {
   background: #3b82f6;
   color: white;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .btn:hover {
@@ -72,6 +79,7 @@ body {
 
 <body>
 
+<!-- Navbar -->
 <div class="nav">
   <div class="logo">MARO</div>
 
@@ -82,14 +90,25 @@ body {
   </div>
 </div>
 
+<!-- المحتوى -->
 <div class="hero">
-  <h1>👋 مرحبًا بك في MARO</h1>
-  <p>موقع احترافي بسيط لكن قوي 💻</p>
+  <h1>👋 أهلاً بيك في MARO</h1>
+  <p>موقع شخصي احترافي</p>
 
-  <button class="btn" onclick="alert('أهلاً بيك 🔥')">
+  <button class="btn" onclick="goToCV()">
     ابدأ الآن
   </button>
 </div>
+
+<script>
+function goToCV() {
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = "cv.html";
+  }, 500);
+}
+</script>
 
 </body>
 </html>
