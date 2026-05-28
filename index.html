@@ -1,114 +1,96 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MARO - Home</title>
+<title>MARO STORE</title>
 
 <style>
-body {
-  margin: 0;
+body{
+  margin:0;
   font-family: Arial;
-  background: #0f172a;
-  color: white;
-  transition: opacity 0.5s ease;
+  background:#0b1220;
+  color:white;
 }
 
-/* لما نعمل fade */
-.fade-out {
-  opacity: 0;
+/* NAV */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  padding:18px 40px;
+  background:#111a2e;
+  align-items:center;
 }
 
-/* Navbar */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 30px;
-  background: #1e293b;
-  align-items: center;
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  letter-spacing:4px;
+  color:#38bdf8;
+  text-shadow:0 0 10px #38bdf8;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #38bdf8;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px #38bdf8;
+.nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
 }
 
-.nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
+.nav a:hover{
+  color:#38bdf8;
 }
 
-.nav a:hover {
-  color: #38bdf8;
+/* HERO */
+.hero{
+  text-align:center;
+  margin-top:120px;
 }
 
-/* المحتوى */
-.hero {
-  text-align: center;
-  margin-top: 120px;
+.hero h1{
+  font-size:45px;
 }
 
-.hero h1 {
-  font-size: 40px;
+.hero p{
+  color:#cbd5e1;
+  margin-top:10px;
 }
 
-.hero p {
-  color: #cbd5e1;
+.btn{
+  margin-top:25px;
+  padding:14px 28px;
+  border:none;
+  border-radius:12px;
+  background:#38bdf8;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-.btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 10px;
-  background: #3b82f6;
-  color: white;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.btn:hover {
-  background: #2563eb;
+.btn:hover{
+  background:#0ea5e9;
 }
 </style>
-
 </head>
 
 <body>
 
-<!-- Navbar -->
 <div class="nav">
   <div class="logo">MARO</div>
 
   <div>
-    <a href="index.html">الرئيسية</a>
-    <a href="cv.html">السيرة الذاتية</a>
-    <a href="shop.html">المتجر</a>
+    <a href="index.html">Home</a>
+    <a href="cv.html">Bioo</a>
+    <a href="shop.html">Store</a>
   </div>
 </div>
 
-<!-- المحتوى -->
 <div class="hero">
-  <h1>👋 أهلاً بيك في MARO</h1>
-  <p>موقع شخصي احترافي</p>
+  <h1>Welcome to MARO Store</h1>
+  <p>A premium brand experience</p>
 
-  <button class="btn" onclick="goToCV()">
-    ابدأ الآن
+  <button class="btn" onclick="location.href='cv.html'">
+    Get Started
   </button>
 </div>
-
-<script>
-function goToCV() {
-  document.body.classList.add("fade-out");
-
-  setTimeout(() => {
-    window.location.href = "cv.html";
-  }, 500);
-}
-</script>
 
 </body>
 </html>
